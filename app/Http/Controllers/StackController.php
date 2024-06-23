@@ -14,9 +14,8 @@ class StackController extends Controller
      */
     public function index()
     {
-        return "Index de Stack";
-        // $stacks = Stack::all();
-        // return response()->json(["stacks"=> $stacks]);
+        $stacks = Stack::all();
+        return response()->json(["stacks"=> $stacks]);
     }
 
     /**
