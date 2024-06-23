@@ -28,6 +28,10 @@ $router->group(
     }
 );
 
+$router->get('/', function(){
+    return "Hola API";
+});
+
 $router->get('/developers', 'DeveloperController@index');
 $router->get('/developers/{id}', 'DeveloperController@show');
 $router->delete('/developers/{id}', 'DeveloperController@destroy');
