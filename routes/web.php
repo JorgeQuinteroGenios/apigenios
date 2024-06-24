@@ -28,6 +28,13 @@ $router->group(
     }
 );
 
+$router->group(
+    ['middleware' => CorsMiddleware::class],
+    function () use ($router){
+        $router->post('/stacks', 'StackController@store');
+    }
+);
+
 $router->get('/', function(){
     return "Hola API";
 });
@@ -54,4 +61,4 @@ $router->get('/stacks', 'StackController@index');
 $router->get('/stacks/{id}', 'StackController@show');
 $router->delete('/stacks/{id}', 'StackController@destroy');
 $router->put('/stacks/{id}', 'StackController@update');
-$router->post('/stacks', 'StackController@store');
+
